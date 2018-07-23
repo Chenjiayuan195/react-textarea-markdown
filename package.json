@@ -1,7 +1,7 @@
 {
-  "name": "react-textarea-markdown",
+  "name": "react-textarea-markdown-editor",
   "version": "1.0.0",
-  "description": "react-plugin",
+  "description": "react-plugin,react,textarea,markdown,react-markdown,react-textarea-markdown,editor",
   "main": "dist/bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
