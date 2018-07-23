@@ -1,11 +1,15 @@
 {
-  "name": "react-markdown",
+  "name": "react-textarea-markdown",
   "version": "1.0.0",
   "description": "react-plugin",
   "main": "dist/bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Chenjiayuan195/react-textarea-markdown.git"
   },
   "author": "Jiayuan Chen",
   "license": "ISC",
