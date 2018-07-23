@@ -36,7 +36,7 @@
 
 }
 .markdown-blue{
-    color:#67aedd;
+    color:#4c92d3;
 }
 .markdown-pink{
     color:#cd9bcb;
@@ -49,6 +49,12 @@
 }
 .markdown-yellow{
     color:#c5b484;
+}
+.markdown-lightblue{
+    color:#74bff0;
+}
+.markdown-orange{
+    color:#d8a38b;
 }
 .markdown-td-left{
     padding-left: 5px;

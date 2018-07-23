@@ -105,13 +105,9 @@ function FindTable ( {node,key} ){
 			if( i != 0 && i != l - 1 && tableArr[i].search( /^([\s]*:?[-]+:?[\s]*)$/ ) == -1 ){
 				return false;
 			}else{
-				if( tableArr[i].search( /^([\s]*:[-]+:[\s]*)$/ ) != -1 ){ 
-					fontPos.push( "center" );
-				}else if( tableArr[i].search( /^([\s]*[-]+:[\s]*)$/ ) != -1 ){
-					fontPos.push( "right" );
-				}else if( tableArr[i].search( /^([\s]*[:]*[-]+[\s]*)$/ ) != -1 ){
-					fontPos.push( "left" );
-				}
+				tableArr[i].search( /^([\s]*:[-]+:[\s]*)$/ ) != -1 && fontPos.push( "center" );
+				tableArr[i].search( /^([\s]*[-]+:[\s]*)$/ ) != -1 && fontPos.push( "right" );
+				tableArr[i].search( /^([\s]*[:]*[-]+[\s]*)$/ ) != -1 && fontPos.push( "left" );
 			}
 		}
 	}else{
@@ -242,12 +238,25 @@ function FindGuide ( {node,key} ){
 	let value = node.value,
 		reg = /^>+/,
 		matchArr,
-		i = 0,l,
+		i = 0,
+		l,
+		newValue = [],
+		current,
 		nowData;
 	if( value.search( reg ) == -1 )return false;
 	matchArr = value.match( reg )[0];
 	l = matchArr.length;
-	nowData = Guide( matchFontstyle( value.split( reg )[1] ) ,key );
+	newValue .push( matchFontstyle( value.split( reg )[1] ) );
+	current = node.next;
+	while( current ){
+		if( current.value.search( reg ) == -1 ){
+			break;
+		}
+		newValue.push( <br key={++key}/>,matchFontstyle( current.value.split( reg )[1] ) );
+		current.hasTrans = true;
+		current = current.next;
+	}
+	nowData = Guide( newValue ,key );
 	while( i < l - 2 ){
 		i++;
 		nowData = Guide( nowData,i );

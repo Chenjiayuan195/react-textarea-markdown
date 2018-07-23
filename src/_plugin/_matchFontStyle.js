@@ -8,7 +8,7 @@ function matchFontStyle ( props ){
 			fontLean:/\*[^\s*]+\*/g,
 			fontLeanWeight:/\*\*\*[^\s*]+\*\*\*/g,
 			delete:/~~[^\s*]+~~/g,
-			url:/(\[[\s\S]*\])(\([\s\S]+\))/g
+			url:/(\[.*\])(\(.+\))/g
 		},
 		config = [{
 			regex:regMap.url,
