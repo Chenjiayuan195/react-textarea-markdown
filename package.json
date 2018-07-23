@@ -1,6 +1,6 @@
 {
   "name": "react-textarea-markdown",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a markdown with textarea editor for react",
   "main": "dist/bundle.js",
   "scripts": {
