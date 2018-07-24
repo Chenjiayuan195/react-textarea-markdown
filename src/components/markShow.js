@@ -8,7 +8,9 @@ export default class MarkShow extends React.Component {
 	constructor ( props ){
 		super( props );
 		this.state = {
-			linked:this.props ? this.lineList( this.props ) : null
+            linked:this.props 
+            ? this.lineList( this.props ) 
+            : null
 		};
 	}
 	componentWillReceiveProps ( nextProps ){

@@ -308,7 +308,9 @@ function FindImage ( {node,key} ){
 		alt = $2.match( /(\[).*(?=\])/ )[0].split( "[" )[1];
 		urlArr = $3.match( /(\().+(?=\))/ )[0].split( " " );
 		url = urlArr[0].split( "(" )[1];
-		title = urlArr[1].split( "\"" )[1] || "";
+		title = urlArr[1]
+			? urlArr[1].split( "\"" )[1]
+			: "";
 	} );
 	node.hasTrans = true;
 	return ( <div key={key} className="markdown-image-div">
@@ -331,13 +333,13 @@ function FindCheckbox ( {node,key} ){
 	if( value.search( regFalse ) != -1 ){
 		newValue = value.replace( regFalse,"" );
 		checkboxList.push( <li key={index}>
-			<input type="checkbox" disabled="true" checked={false}/>{newValue}
+			<input type="checkbox" disabled="true" checked={false} className="markdown-checkbox"/>{newValue}
 		</li> );
 	}
 	if( value.search( regTrue ) != -1 ){
 		newValue = value.replace( regTrue,"" );
 		checkboxList.push( <li key={index}>
-			<input type="checkbox" disabled="true" checked={true}/>{newValue}
+			<input type="checkbox" disabled="true" checked={true} className="markdown-checkbox"/>{newValue}
 		</li> );
 	}
 	node.hasTrans = true;
@@ -349,12 +351,12 @@ function FindCheckbox ( {node,key} ){
 		if( nextValue.search( regFalse ) != -1 ){
 			newNextValue = nextValue.replace( regFalse,"" );
 			checkboxList.push( <li key={index}>
-				<input type="checkbox" disabled="true" checked={false}/>{newNextValue}
+				<input type="checkbox" disabled="true" checked={false} className="markdown-checkbox"/>{newNextValue}
 			</li> );
 		}else if( nextValue.search( regTrue ) != -1 ){
 			newNextValue = nextValue.replace( regTrue,"" );
 			checkboxList.push( <li key={index}>
-				<input type="checkbox" disabled="true" checked={true}/>{newNextValue}
+				<input type="checkbox" disabled="true" checked={true} className="markdown-checkbox"/>{newNextValue}
 			</li> );
 		}else{
 			break;

@@ -7,8 +7,12 @@ export default class Markdown extends React.Component{
 		super( props );
 		this.state = {
 			text:this.props.source||"",
-			markWidth:this.props.customWidth ? this.props.customWidth[0] : "50",
-			textareaWidth:this.props.customWidth ? this.props.customWidth[1] : "50",
+            markWidth:this.props.customWidth 
+            ? this.props.customWidth[0] 
+            : "50",
+            textareaWidth:this.props.customWidth 
+            ? this.props.customWidth[1] 
+            : "50",
 		};
 	}
 	componentWillReceiveProps ( nextProps ){

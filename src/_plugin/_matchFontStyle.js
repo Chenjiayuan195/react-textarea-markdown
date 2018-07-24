@@ -16,7 +16,9 @@ function matchFontStyle ( props ){
 				result[2].match( /(\()(.+(?=\)))/ )[0].split( " " )[0].split( "(" )[1]
 			}
 			title={
-				result[2].match( /(\()(.+(?=\)))/ )[0].split( " " )[0].split( "\"" )[1] || ""
+				result[2].match( /(\()(.+(?=\)))/ )[0].split( " " )[1]
+					? result[2].match( /(\()(.+(?=\)))/ )[0].split( " " )[1].split( "\"" )[1] 
+					: ""
 			}>{matchFontStyle( result[1].match( /(\[).*(?=\])/ )[0].split( "[" )[1] )}</a>
 		},{
 			regex:regMap.fontLeanWeight,

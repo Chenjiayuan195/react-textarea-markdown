@@ -1,12 +1,17 @@
 .markdown-div ul,ol{
     padding-left: 20px;
+    line-height: 30px;
 }
 .markdown-div blockquote{
     border-left:6px solid #C0C0C0;
     background-color:#F5F5F5;
     padding: 15px 10px 15px 10px;
 }
-
+.markdown-checkbox{
+    width: 15px;
+    height: 20px;
+    vertical-align: middle;
+}
 .markdown-div,.markdown-h{
     text-align: left;
 }
