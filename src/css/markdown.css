@@ -30,8 +30,9 @@
 }
 
 .markdown-pre{
+    width: 85%;
     background-color: black;
-    padding: 2px 10px 2px 10px;
+    padding: 2px 20px 2px 25px;
     overflow: auto;
 
 }
@@ -77,10 +78,12 @@
     background-color:#F5F5F5;
 }
 .markdown-table{
-    width: 100%;
+    width: 80%;
     border-collapse:collapse;
 }
-
+.markdown-table td{
+    line-height: 40px;
+}
 .markdown-image{
     border: 0;
     max-width: 100%;
@@ -132,6 +135,7 @@
     width: 50%;
     box-sizing: border-box;
     padding: 0 20px; 
+    border-right: 2px solid #cccccc;
 }
 .markdown-textarea-title{
     background-color: #666666;
@@ -149,8 +153,6 @@
     box-sizing: border-box;
     background-color: #fdfbf5;
     overflow-y: auto;
-    border-left: 1px solid #cccccc;
-    border-right: 1px solid #cccccc;
 }
 .markdown-clearfloat{
     height: 100%;

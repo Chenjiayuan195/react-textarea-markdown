@@ -151,7 +151,7 @@ function FindTable ( {node,key} ){
 function tableForOtherNode ( node,dir,fontPos,key ){
 	let strArr = node[dir].value.split( "|" ),
 		thArr = [];
-	if( node[dir].value.search( /^(\|[\s]*[\s\S]*[\s]*\|)/ ) == -1 ){
+	if( node[dir].value.search( /^(\|[\s]*.*[\s]*\|)/ ) == -1 ){
 		return false;
 	}
 	thArr = strArr.map( ( item,index ) => {
@@ -298,15 +298,15 @@ function FindLine ( {node,key} ){
 /*search image */
 function FindImage ( {node,key} ){
 	let value = node.value,
-		reg = /^!(\[[\s\S]*\])(\([\s\S]+\))/,
+		reg = /^!(\[.*\])(\(.+\))/,
 		alt,
 		url,
 		title,
 		urlArr;
 	if( value.search( reg ) == -1 )return false;
 	value.replace( reg,( $1,$2,$3 ) => {
-		alt = $2.match( /(\[)[\s\S]*(?=\])/ )[0].split( "[" )[1];
-		urlArr = $3.match( /(\()[\s\S]+(?=\))/ )[0].split( " " );
+		alt = $2.match( /(\[).*(?=\])/ )[0].split( "[" )[1];
+		urlArr = $3.match( /(\().+(?=\))/ )[0].split( " " );
 		url = urlArr[0].split( "(" )[1];
 		title = urlArr[1].split( "\"" )[1] || "";
 	} );

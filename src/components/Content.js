@@ -8,7 +8,7 @@ export default class Content extends React.Component{
 	constructor ( props ){
 		super( props );
 		this.state = {
-			nodeList:null
+			nodeList:this.props ? this.transferred( this.props ) : null
 		};
 	}
 	componentWillReceiveProps ( nextProps ){

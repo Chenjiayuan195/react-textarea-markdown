@@ -4,20 +4,20 @@ import processString from "react-process-string";
 function matchFontStyle ( props ){
 	let newStr = props; 
 	const regMap = {
-			fontWeight:/\*\*[^\s*]+\*\*/g,
-			fontLean:/\*[^\s*]+\*/g,
-			fontLeanWeight:/\*\*\*[^\s*]+\*\*\*/g,
-			delete:/~~[^\s*]+~~/g,
+			fontWeight:/\*\*.+\*\*/g,
+			fontLean:/\*.+\*/g,
+			fontLeanWeight:/\*\*\*.+\*\*\*/g,
+			delete:/~~.+~~/g,
 			url:/(\[.*\])(\(.+\))/g
 		},
 		config = [{
 			regex:regMap.url,
 			fn:( key,result ) => <a key={key} className="markdown-url-a" target="_blank" href={
-				result[2].match( /(\()([\s\S]+(?=\)))/ )[0].split( " " )[0].split( "(" )[1]
+				result[2].match( /(\()(.+(?=\)))/ )[0].split( " " )[0].split( "(" )[1]
 			}
 			title={
-				result[2].match( /(\()([\s\S]+(?=\)))/ )[0].split( " " )[0].split( "\"" )[1] || ""
-			}>{matchFontStyle( result[1].match( /(\[)[\s\S]*(?=\])/ )[0].split( "[" )[1] )}</a>
+				result[2].match( /(\()(.+(?=\)))/ )[0].split( " " )[0].split( "\"" )[1] || ""
+			}>{matchFontStyle( result[1].match( /(\[).*(?=\])/ )[0].split( "[" )[1] )}</a>
 		},{
 			regex:regMap.fontLeanWeight,
 			fn:( key,result ) => ( <strong key={key}>
