@@ -1,7 +1,6 @@
 # react-textarea-markdown
-###### A simpler react-markdown
+> A simpler react-markdown
 
----
 ### Install
 ```
 npm i react-textarea-markdown
